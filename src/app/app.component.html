@@ -1,22 +1,9 @@
 <div class="container">
-  <div class="columns is-centered">
-
-    <div class="box column is-one-third">
-      <h1 class="title has-text-centered">Typing challenge</h1>
-      <p class="has-text-centered">
-        @for (letter of randomText.split(''); track $index) {
-          <span [class]="compare(letter, input[$index])">{{letter}}</span>
-        }
-      </p>
-
-      <div class="field">
-        <input [disabled]="success" class="input" (input)="handleInput($event)"/>  
-      </div>
-
-      @if (success) {
-        <div class="box has-text-centered"> 
-          <h1 class="title">Success!</h1>
-        </div>
-      }
-  </div>
+    <h1 class="title">My Toodoos</h1>
+    <app-form></app-form>
+    @if(tasks.length) {
+        <app-list></app-list>
+    } @else {
+        <app-empty-state></app-empty-state>
+    }
 </div>

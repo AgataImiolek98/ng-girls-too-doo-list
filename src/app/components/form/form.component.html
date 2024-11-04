@@ -1,0 +1,16 @@
+<form class="form">
+    <input 
+      aria-label="enter new value for edited task"
+      type="text" 
+      class="input" 
+      placeholder="Enter your task too doo" 
+      [formControl]="newTaskControl"/>
+    <button
+      type="submit" 
+      class="button"
+      [disabled]="!newTaskControl.value"
+      (click)="addTask(newTaskControl.value)"
+      >
+      Add
+    </button>
+  </form>

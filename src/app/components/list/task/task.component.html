@@ -1,0 +1,20 @@
+<li class="list-item">
+    @if (editedTask$.value === task) {
+      <input
+        type="text"
+        aria-label="enter new value for edited task"
+        class="input"
+        [value]="task"
+        #editedTask
+      />
+      <button type="button" class="button" (click)="updateTask(task, editedTask.value)">Save</button>
+    } @else {
+      <p (click)="toggleEditTask(task)" class="tooltip">
+        {{task | tooLongValue }}
+        @if(task.length > 15) {
+          <span class="tooltiptext">{{task}}</span>
+        }
+      </p>
+    }
+    <button type="button" class="button" (click)="removeTask(task)">Delete</button>
+  </li> 
