@@ -1,0 +1,11 @@
+.correct {
+    color: rgb(0, 255, 0);
+}
+
+.incorrect {
+    color: rgb(255, 0, 0)
+}
+
+.pending {
+    color: white;
+}
