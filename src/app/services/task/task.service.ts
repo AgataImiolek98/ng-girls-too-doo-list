@@ -16,8 +16,8 @@ export class TaskService {
   ]
 
   constructor(private storage: StorageService) {
-    const isSthInstorage: boolean =  !!storage.getData('Todo_List').length;
-    this.tasks = isSthInstorage ? storage.getData('Todo_List') : this.defaultTooDoos
+    const todoList = storage.getData('Todo_List') || [];
+    this.tasks = todoList.length ? todoList : this.defaultTooDoos;
   }
 
   addTask(task: string) {

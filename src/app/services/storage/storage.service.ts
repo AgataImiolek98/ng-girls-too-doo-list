@@ -6,10 +6,7 @@ import { Injectable } from '@angular/core';
 export class StorageService {
   getData(key: string): string[] | [] {
     const storage: string | null= localStorage.getItem(key);
-    if(storage) {
-      return JSON.parse(storage); 
-    }
-    return []
+    return storage ? JSON.parse(storage) : [];
   }
 
   setData(key: string, data: any) {
